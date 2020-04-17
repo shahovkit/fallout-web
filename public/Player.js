@@ -1,45 +1,53 @@
-function Player() {
+export class Player
+{
 
-  var coordinates = {q:0,r:0};//hex
-  var speed = 0.1; //hex per second
-  var currentPath = [];//current path that by will be go
+    coordinates;//hex
+    speed; //seconds per hex
+    currentPath;//current path that by will be go'.
 
-  this.goByPath = (path)=>{
+    isRunPathIteration;
 
-    let isRunPath = !Boolean(currentPath.length);
+    COEFFICIENT_SPEED = 1000;
 
-    currentPath = path;
-
-    if(isRunPath){
-      pathIteration()
+    constructor(){
+        this.coordinates = {q:0,r:0};
+        this.speed = 0.3;
+        this.isRunPathIteration = false;
     }
-  }
 
-  let pathIteration = ()=>{
-    if(currentPath.length){
-      setTimeout(()=>{
-        coordinates = currentPath.shift();
-        pathIteration();
-      },1000*speed);
+    goByPath(path) {
+        this.currentPath = path;
+
+        if(!this.isRunPathIteration){
+            this.pathIteration()
+        }
     }
-  };
 
+    pathIteration() {
+        if(this.currentPath.length){
+            this.isRunPathIteration=true;
+            setTimeout(
+                ()=>{
+                    this.coordinates = this.currentPath.shift();
+                    this.pathIteration();
+                },
+                this.COEFFICIENT_SPEED*this.speed
+            );
+        }else{
+            this.isRunPathIteration=false;
+        }
+    };
 
-  this.getCoordinates = ()=>{
-    return coordinates;
-  }
+    getCoordinates() {
+        return this.coordinates;
+    }
 
-  this.setCoordinates = (hex)=>{
-    coordinates = hex;
-  }
+    setCoordinates(hex) {
+        this.coordinates = hex;
+    }
 
-  this.setSpeed = (newSpeed)=>{
-    speed = newSpeed;
-  }
-
+    setSpeed(newSpeed) {
+        this.speed = newSpeed;
+    }
 
 }
-
-
-
-

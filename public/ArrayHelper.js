@@ -1,7 +1,8 @@
-const ArrayHelper = {
+export class ArrayHelper
+{
   // ARRAY SHUFFLE
   // From: http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-  shuffle: (array) => {
+  static shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
@@ -18,7 +19,9 @@ const ArrayHelper = {
     }
 
     return array;
-  },
+  }
 
-  multiArray: (x, y) => Array(...Array(x)).map(() => Array(y))
-};
+  static multiArray(x, y) {
+    return Array(...Array(x)).map(() => Array(y))
+  }
+}

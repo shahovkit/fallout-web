@@ -1,40 +1,45 @@
-const Conversion = {
+import {Units} from './Units.js'
+import {Constants} from './Constants.js'
 
-  offset2Cube:(hex) => {
-    var x = hex.q - (hex.r - (hex.r&1)) / 2
+export class Conversion
+{
+  static size = Constants.sizeHex;
+
+  static offset2Cube(hex) {
+    var x = hex.q - (hex.r - (hex.r&1)) / 2;
     var z = hex.r;
     return Units.Cube(x,-x-z,z);
-  },
+  }
 
-  cube2Offset:(cube) => {
+  static cube2Offset(cube) {
     var q = cube.x + (cube.z - (cube.z&1)) / 2;
     var r = cube.z;
     return Units.Hex(q, r);
-  },
+  }
 
-  pixel2Cube:(point) => {
-    var x = Math.sqrt(3) * point.x / 3 / size.x - point.y / 3 / size.y;
-    var z = 2/3 * point.y / size.y;
+  static pixel2Cube(point) {
+    var x = Math.sqrt(3) * point.x / 3 / this.size.x - point.y / 3 / this.size.y;
+    var z = 2/3 * point.y / this.size.y;
     return Units.Cube(x, -x-z, z);
-  },
+  }
 
-  pixel2Offset:(point)=>{
+  static pixel2Offset(point) {
     return Conversion.cube2Offset(Conversion.cubeRound(Conversion.pixel2Cube(point)))
-  },
+  }
 
-  hex_to_pixel:(hex)=>{
-    var x = size.x * (Math.sqrt(3) * hex.q + (Math.sqrt(3) / 2) * (hex.r&1));
-    var y = size.y * 3/2 * hex.r;
+  static hex_to_pixel(hex) {
+    var x = this.size.x * (Math.sqrt(3) * hex.q + (Math.sqrt(3) / 2) * (hex.r&1));
+    var y = this.size.y * 3/2 * hex.r;
     return Units.Point(x, y);
-  },
+  }
 
-  pixel_to_axial:(point)=>{
-    var q = Math.sqrt(3) * point.x / 3 / size.x - point.y / 3 / size.y;
-    var r = (2/3 * point.y) / size.y;
+  static pixel_to_axial(point) {
+    var q = Math.sqrt(3) * point.x / 3 / this.size.x - point.y / 3 / this.size.y;
+    var r = (2/3 * point.y) / this.size.y;
     return Units.Hex(q, r)
-  },
+  }
 
-  cubeRound:(cube)=> {
+  static cubeRound(cube) {
     var x = Math.round(cube.x);
     var y = Math.round(cube.y);
     var z = Math.round(cube.z);
@@ -52,4 +57,4 @@ const Conversion = {
 
     return Units.Cube(x,y,z);
   }
-};
+}

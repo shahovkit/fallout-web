@@ -1,7 +1,14 @@
-const Units = {
-  Point : (x, y) => ({x, y}),
+export class Units
+{
+  static Point(x, y) {
+    return {x, y}
+  }
 
-  Cube : (x, y, z) => ({x, y, z}),
+  static Cube(x, y, z) {
+    return {x, y, z}
+  }
 
-  Hex : (q, r) => ({q, r}),
-};
+  static Hex(q, r) {
+    return {q, r}
+  }
+}
