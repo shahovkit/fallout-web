@@ -1,15 +1,14 @@
 // THROTTLING
 // from: http://sampsonblog.com/749/simple-throttle-function
 
-
-function throttle (callback, limit) {
-  var wait = false;                 // Initially, we're not waiting
-  return function () {              // We return a throttled function
-    if (!wait) {                  // If we're not waiting
+class Throttle {
+  wait = false;
+  constructor(callback, limit){              // We return a throttled function
+    if (!this.wait) {                  // If we're not waiting
       callback.call();          // Execute users function
-      wait = true;              // Prevent future invocations
+      this.wait = true;              // Prevent future invocations
       setTimeout(function () {  // After a period of time
-        wait = false;         // And allow future invocations
+        this.wait = false;         // And allow future invocations
       }, limit);
     }
   }
