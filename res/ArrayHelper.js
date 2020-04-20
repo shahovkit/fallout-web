@@ -21,8 +21,12 @@ export class ArrayHelper
         return array;
     }
 
-    static multiArray(x, y) {
-        return Array(...Array(x)).map(() => Array(y))
+    issetDuo(){
+
+    }
+
+    static multiArray(y, x) {
+        return Array(...Array(y)).map(() => Array(x))
     }
 
     static arrayMin(arr, number) {

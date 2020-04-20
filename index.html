@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+    <title>Socket.IO</title>
+</head>
+<body>
+<style>
+    body {
+        overflow: hidden;
+        margin: 0px;
+        height: 1080px;
+        width: 1920px;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+<script type="module">
+    import {Player} from './res/Player.js'
+    import {Units} from './res/Units.js'
+    import {Conversion} from './res/Conversion.js'
+    import {Constants} from './res/Constants.js'
+    import {GameMap} from './res/GameMap.js'
+    import {Graphics} from './res/Graphics.js'
+    import {Path} from './res/Path.js'
+
+    let gameMap = new GameMap();
+    let graphics;
+    let text;
+    let player = new Player();
+    let coord;
+    let add;
+    let stages = 0;
+    let path1, path2;
+    let debug = false;
+
+    let world = {
+        map:gameMap,
+        players:{
+            current:player
+        }
+    };
+
+    var game = new Phaser.Game({
+        //type: Phaser.AUTO,
+        type: Phaser.CANVAS,
+        width: 1920,
+        height: 1080,
+        scene: {
+            create: create,
+            update: update
+        }
+    });
+
+    function create() {
+
+        graphics = this.add.graphics({lineStyle: {width: 3, color: 0xe83331}});
+        text = this.add.text(40, 40, '');
+        coord = this.add.text(40, 60);
+        add = this.add;
+
+        this.input.on('pointermove', pointermove);
+        this.input.on('pointerdown', pointerdown);
+
+    }
+
+    function update() {
+
+        graphics.clear();
+
+        if (Constants.center.y >= 0 && Constants.center.x >= 0) {
+            let oddr = Conversion.pixel2Offset(Constants.center)
+            if (oddr.q < gameMap.getSize().q && oddr.r < gameMap.getSize().r) {
+                graphics.strokePoints(Graphics.hex_corners(Constants.center, Constants.sizeHex, 6), true);
+            }
+        }
+
+        if(world.map.getHexes().length) {
+            for (let r = 0; r < world.map.getHexes().length; r++) {
+                for (let q = 0; q < world.map.getHexes()[0].length; q++) {
+                    try {
+                        if (world.map.getHexes()[r][q].collision) {
+                            graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel(Units.Hex(r,q)), Constants.sizeHex, 6), true).fillStyle(0x00ff00, 1).fillPath();
+                        }
+                    } catch (e) {
+                        debugger;
+                    }
+                }
+            }
+        }
+
+        graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel(world.players.current.getCoordinates()), Constants.sizeHex, 6), true).fillStyle(0x2a42ff, 1).fillPath();
+
+        if (Path.finalPath.length > 0)
+            Path.finalPath.forEach((hex) => {
+                graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel({
+                    q: hex.q,
+                    r: hex.r
+                }), {x:Constants.sizeHex.x/2,y:Constants.sizeHex.y/2}, 6), true).fillStyle(0x6600a5, 1).fillPath();
+            });
+    }
+
+    let pointerdown = pointer => {
+        let hex = Conversion.pixel2Offset({x: pointer.x, y: pointer.y});
+        if (
+            Constants.center.y >= 0 &&
+            Constants.center.x >= 0 &&
+            hex.q < gameMap.getSize().q &&
+            hex.r < gameMap.getSize().r &&
+            world.map.getHexes()[hex.r][hex.q].collision === false
+        ) {
+            switch (stages) {
+                case 0:
+                    path1 = hex;
+                    stages = 1;
+                    break;
+                case 1:
+                    path2 = hex;
+                    debug = true;
+                    Path.findPath(path1, path2, gameMap);
+                    stages = 2;
+                    //console.log(time);
+                    break;
+                case 2:
+                    debug = false;
+                    Path.finalPath = [];
+                    Path.finalPathNeighbors = [];
+                    path1 = undefined;
+                    path2 = undefined;
+                    stages = 0;
+                    break;
+            }
+            path2 = hex;
+            Path.finalPath = Path.findPath(world.players.current.getCoordinates(), path2, gameMap);
+            Path.finalPath.shift();
+            world.players.current.goByPath(Path.finalPath)
+
+        }
+    }
+
+    let pointermove = pointer => {
+
+        var cube = Conversion.pixel2Cube({x: pointer.x, y: pointer.y});
+        var round_cube = Conversion.cubeRound(cube);
+        var round_hex = Conversion.cube2Offset(round_cube);
+        Constants.center = Conversion.hex_to_pixel(round_hex);
+        path2 = round_hex;
+
+        var offsetToCube = Conversion.offset2Cube(round_hex);
+        if (
+            Constants.center.y >= 0 &&
+            Constants.center.x >= 0 &&
+            round_hex.q < gameMap.getSize().q &&
+            round_hex.r < gameMap.getSize().r &&
+            typeof path1 !== "undefined" &&
+            stages === 1 &&
+            world.map.getHexes()[round_hex.r][round_hex.q].collision === false
+        ) {
+            Path.findPath(path1, path2, gameMap);
+        }
+
+        // let neghs = APuthSearch(round_hex, function (hex) {
+        //   let oddr = pixel_to_oddr({x:game.config.width,y:game.config.height});
+        //
+        //   return hex.q < 0 || hex.r < 0 || hex.q > oddr.q+1 || hex.r > oddr.r+1
+        //
+        // });
+
+
+        coord.text = 'Cursor\n x:' + pointer.x + "\n" + ' y:' + pointer.y + "\n" +
+            'Hex\n r:' + round_hex.r + "\n" + ' q:' + round_hex.q + "\n" +
+            'Cube\n x:' + round_cube.x + "\n" + ' y:' + round_cube.y + "\n" + ' z:' + round_cube.z + "\n"+
+            'Offset2Cube\n x:' + offsetToCube.x + "\n" + ' y:' + offsetToCube.y + "\n" + ' z:' + offsetToCube.z + "\n";
+
+    };
+
+
+</script>
+</body>
+</html>

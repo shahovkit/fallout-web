@@ -29,15 +29,4 @@ export class HexMath
     return this.cubeDistance(Conversion.offset2Cube(hex1), Conversion.offset2Cube(hex2))
   }
 
-  // dx1 =
-  // dy1 =
-  // dx2 =
-  // dy2 =
-  // крест = abs (current.x - goal.x * start.y - goal.y - start.x - goal.x * current.y - goal.y)
-  static moreEuristic(start, current, goal) {
-    return ( current.q - goal.q ) * ( start.r - goal.r  ) - ( start.q - goal.q ) * ( current.r - goal.r )
-  }
-  //((current.x - goal.x) * (start.y - goal.y) - (start.x - goal.x) * (current.y - goal.y))
-  //start2goal = { x:goal.x-start.x, y:goal.y-start.y, z:goal.z-start.z }
-  //current2goal = { x:goal.x-current.x, y:goal.y-current.y, z:goal.z-current.z }
 }

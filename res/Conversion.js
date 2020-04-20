@@ -14,7 +14,7 @@ export class Conversion
   static cube2Offset(cube) {
     var q = cube.x + (cube.z - (cube.z&1)) / 2;
     var r = cube.z;
-    return Units.Hex(q, r);
+    return Units.Hex(r, q);
   }
 
   static pixel2Cube(point) {
@@ -36,7 +36,7 @@ export class Conversion
   static pixel_to_axial(point) {
     var q = Math.sqrt(3) * point.x / 3 / this.size.x - point.y / 3 / this.size.y;
     var r = (2/3 * point.y) / this.size.y;
-    return Units.Hex(q, r)
+    return Units.Hex(r, q)
   }
 
   static cubeRound(cube) {
