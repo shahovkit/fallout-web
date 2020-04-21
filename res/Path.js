@@ -40,7 +40,7 @@ export class Path
      * @param goal
      * @returns array
      */
-    static findPath(start, goal, gameMap) {
+    static findPath(start, goal) {
         // if(debug == true){
         //   debugger;
         // }
@@ -58,7 +58,7 @@ export class Path
             const current = frontier.pop();
             //const currentHex = map[current.q][current.r];
 
-            const nears = NearHex.getNears(current,gameMap);
+            const nears = NearHex.getNears(current);
 
             // Early exit (stop exploring map when goal is reached)
             if (HexMath.hexEqual(current, goal)) {

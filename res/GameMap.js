@@ -10,7 +10,20 @@ export class GameMap
 
     collision = [];
 
-    constructor(){
+    static instance;
+
+    static getInstance(){
+        if( typeof(this.instance) === "undefined"){
+            this.instance = new this();
+        }
+        return this.instance
+    }
+
+     constructor(){
+         if( typeof(this.instance) !== "undefined"){
+             throw new Error("Object already exist, use getInstance() instead new")
+         }
+        this.instance = this;
         this.init();
 
     }
@@ -90,8 +103,8 @@ export class GameMap
     }
 
     static findHexMap(hex) {
-        if (world.map.getHexes()[hex.r]) {
-            return world.map.getHexes()[hex.r][hex.q];
+        if (GameMap.getInstance().getHexes()[hex.r]) {
+            return GameMap.getInstance().getHexes()[hex.r][hex.q];
         } else {
             return undefined;
         }

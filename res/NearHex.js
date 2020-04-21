@@ -1,4 +1,5 @@
 import {Units} from "./Units.js";
+import {GameMap} from "./GameMap.js";
 
 export class NearHex {
 
@@ -30,16 +31,16 @@ export class NearHex {
     /**
      * @param {Units.Hex} hex The date
      */
-    static getNears = (hex,gameMap) => {
+    static getNears = (hex) => {
         let nearHexes = [];
         for (let direction = 0; direction <= 5; direction++) {
             let nearHex = this.getNearHexByDirection(hex, direction);
 
             // Is the neighbor on/in the map?
             if (nearHex.q >= 0 && nearHex.r >= 0
-                && nearHex.q < gameMap.getSize().q && nearHex.r < gameMap.getSize().r) {
+                && nearHex.q < GameMap.getInstance().getSize().q && nearHex.r < GameMap.getInstance().getSize().r) {
 
-                if (!gameMap.getHexes()[nearHex.r][nearHex.q].collision) {
+                if (!GameMap.getInstance().getHexes()[nearHex.r][nearHex.q].collision) {
                     nearHexes.push(nearHex); // add an edge to the graph
                 }
             }
