@@ -12,8 +12,8 @@
         width: 1920px;
     }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+<script src="res/vendor/Socket.io.js"></script>
+<script src="res/vendor/Phaser.js"></script>
 <script type="module">
     import {Player} from './res/Player.js'
     import {Units} from './res/Units.js'
@@ -25,6 +25,7 @@
     import {Pointer} from './res/Pointer.js'
 
     let gameMap = new GameMap();
+    let gameMap2 = new GameMap();
     let graphics;
     let text;
     let player = new Player();
@@ -33,6 +34,7 @@
     let stages = 0;
     let path1, path2;
     let debug = false;
+    let phaser;
 
     let world = {
         players:{
@@ -40,56 +42,76 @@
         }
     };
 
-    var phaser = new Phaser.Game({
+    var phaserGame = new Phaser.Game({
         type: Phaser.AUTO,
         width: 1920,
         height: 1080,
         scene: {
-            create: create,
-            update: update
+            create: gameInit,
+            update: gameLoop
         }
     });
 
-    function create() {
-        graphics = this.add.graphics({lineStyle: {width: 3, color: 0xe83331}});
-        text = this.add.text(40, 40, '');
-        coord = this.add.text(40, 60);
-        add = this.add;
+    function gameInit() {
+        phaser = this;
+        graphics = phaser.add.graphics();
+        text = phaser.add.text(40, 40, '');
+        coord = phaser.add.text(40, 60);
+        add = phaser.add;
 
-        this.input.on('pointermove', pointermove);
-        this.input.on('pointerdown', pointerdown);
+        phaser.input.on('pointermove', pointermove);
+        phaser.input.on('pointerdown', pointerdown);
 
     }
 
-    function update() {
+    function gameLoop() {
 
         graphics.clear();
+        drawPointer();
+        drawCollision();
+        drawPlayer();
+        drawPath();
+    }
 
+    function drawPointer(){
         if (Pointer.positionByHex.y >= 0 && Pointer.positionByHex.x >= 0) {
             let oddr = Conversion.pixel2Offset(Pointer.positionByHex);
             if (oddr.q < GameMap.getInstance().getSize().q && oddr.r < GameMap.getInstance().getSize().r) {
+
+                graphics.lineStyle(3, 0xe83331);
                 graphics.strokePoints(Graphics.hex_corners(Pointer.positionByHex, Constants.sizeHex, 6), true);
             }
         }
+    }
 
+    function drawCollision() {
         if(GameMap.getInstance().getHexes().length) {
             for (let r = 0; r < GameMap.getInstance().getHexes().length; r++) {
                 for (let q = 0; q < GameMap.getInstance().getHexes()[0].length; q++) {
-                        if (GameMap.getInstance().getHexes()[r][q].collision) {
-                            graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel(Units.Hex(r,q)), Constants.sizeHex, 6), true).fillStyle(0x00ff00, 1).fillPath();
-                        }
+                    if (GameMap.getInstance().getHexes()[r][q].collision) {
+                        graphics.lineStyle(3, 0xe83331);
+                        graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel(Units.Hex(r,q)), Constants.sizeHex, 6), true).fillStyle(0x00ff00);
+                        graphics.fillPath();
+                    }
                 }
             }
         }
+    }
 
-        graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel(world.players.current.getCoordinates()), Constants.sizeHex, 6), true).fillStyle(0x2a42ff, 1).fillPath();
+    function drawPlayer(){
+        graphics.lineStyle(3, 0xe83331);
+        graphics.fillStyle(0x2a42ff);
+        graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel(world.players.current.getCoordinates()), Constants.sizeHex, 6), true);
+        graphics.fillPath();
+    }
 
+    function drawPath() {
         if (Path.finalPath.length > 0)
             Path.finalPath.forEach((hex) => {
-                graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel({
-                    q: hex.q,
-                    r: hex.r
-                }), {x:Constants.sizeHex.x/2,y:Constants.sizeHex.y/2}, 6), true).fillStyle(0x6600a5, 1).fillPath();
+                graphics.lineStyle(3, 0xe83331);
+                graphics.fillStyle(0x6600a5, 1);
+                graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel(Units.Hex(hex.r,hex.q)), {x:Constants.sizeHex.x/2,y:Constants.sizeHex.y/2}, 6), true);
+                graphics.fillPath();
             });
     }
 
