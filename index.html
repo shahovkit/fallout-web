@@ -24,18 +24,13 @@
     import {Path} from './res/Path.js'
     import {Pointer} from './res/Pointer.js'
 
-    let gameMap = new GameMap();
-    let gameMap2 = new GameMap();
     let graphics;
-    let text;
     let player = new Player();
     let coord;
-    let add;
     let stages = 0;
     let path1, path2;
     let debug = false;
     let phaser;
-
     let world = {
         players:{
             current:player
@@ -55,9 +50,8 @@
     function gameInit() {
         phaser = this;
         graphics = phaser.add.graphics();
-        text = phaser.add.text(40, 40, '');
+        Graphics.getInstance().setPhaserGraphics(graphics);
         coord = phaser.add.text(40, 60);
-        add = phaser.add;
 
         phaser.input.on('pointermove', pointermove);
         phaser.input.on('pointerdown', pointerdown);
@@ -66,60 +60,18 @@
 
     function gameLoop() {
 
-        graphics.clear();
-        drawPointer();
-        drawCollision();
-        drawPlayer();
-        drawPath();
-    }
-
-    function drawPointer(){
-        if (Pointer.positionByHex.y >= 0 && Pointer.positionByHex.x >= 0) {
-            let oddr = Conversion.pixel2Offset(Pointer.positionByHex);
-            if (oddr.q < GameMap.getInstance().getSize().q && oddr.r < GameMap.getInstance().getSize().r) {
-
-                graphics.lineStyle(3, 0xe83331);
-                graphics.strokePoints(Graphics.hex_corners(Pointer.positionByHex, Constants.sizeHex, 6), true);
-            }
-        }
-    }
-
-    function drawCollision() {
-        if(GameMap.getInstance().getHexes().length) {
-            for (let r = 0; r < GameMap.getInstance().getHexes().length; r++) {
-                for (let q = 0; q < GameMap.getInstance().getHexes()[0].length; q++) {
-                    if (GameMap.getInstance().getHexes()[r][q].collision) {
-                        graphics.lineStyle(3, 0xe83331);
-                        graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel(Units.Hex(r,q)), Constants.sizeHex, 6), true).fillStyle(0x00ff00);
-                        graphics.fillPath();
-                    }
-                }
-            }
-        }
-    }
-
-    function drawPlayer(){
-        graphics.lineStyle(3, 0xe83331);
-        graphics.fillStyle(0x2a42ff);
-        graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel(world.players.current.getCoordinates()), Constants.sizeHex, 6), true);
-        graphics.fillPath();
-    }
-
-    function drawPath() {
-        if (Path.finalPath.length > 0)
-            Path.finalPath.forEach((hex) => {
-                graphics.lineStyle(3, 0xe83331);
-                graphics.fillStyle(0x6600a5, 1);
-                graphics.strokePoints(Graphics.hex_corners(Conversion.hex_to_pixel(Units.Hex(hex.r,hex.q)), {x:Constants.sizeHex.x/2,y:Constants.sizeHex.y/2}, 6), true);
-                graphics.fillPath();
-            });
+        Graphics.getInstance().clear();
+        Graphics.getInstance().drawPointer();
+        Graphics.getInstance().drawCollision();
+        Graphics.getInstance().drawPlayer(player);
+        Graphics.getInstance().drawPath();
     }
 
     function pointerdown(pointer) {
         let hex = Conversion.pixel2Offset({x: pointer.x, y: pointer.y});
         if (
-            Pointer.positionByHex.y >= 0 &&
-            Pointer.positionByHex.x >= 0 &&
+            Pointer.centerHex.y >= 0 &&
+            Pointer.centerHex.x >= 0 &&
             hex.q < GameMap.getInstance().getSize().q &&
             hex.r < GameMap.getInstance().getSize().r &&
             GameMap.getInstance().getHexes()[hex.r][hex.q].collision === false
@@ -154,17 +106,17 @@
     }
 
     function pointermove(pointer) {
-
+        Pointer.position = {x: pointer.x, y: pointer.y};
         var cube = Conversion.pixel2Cube({x: pointer.x, y: pointer.y});
         var round_cube = Conversion.cubeRound(cube);
         var round_hex = Conversion.cube2Offset(round_cube);
-        Pointer.positionByHex = Conversion.hex_to_pixel(round_hex);
+        Pointer.centerHex = Conversion.hex_to_pixel(round_hex);
         path2 = round_hex;
 
         var offsetToCube = Conversion.offset2Cube(round_hex);
         if (
-            Pointer.positionByHex.y >= 0 &&
-            Pointer.positionByHex.x >= 0 &&
+            Pointer.centerHex.y >= 0 &&
+            Pointer.centerHex.x >= 0 &&
             round_hex.q < GameMap.getInstance().getSize().q &&
             round_hex.r < GameMap.getInstance().getSize().r &&
             typeof path1 !== "undefined" &&
