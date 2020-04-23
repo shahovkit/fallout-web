@@ -28,6 +28,10 @@ export class GameMap
 
     }
 
+    isNotCollision(hex){
+        return this.getHexes()[hex.r][hex.q].collision === false;
+    }
+
     getHexes(){
         return this.hexes;
     }

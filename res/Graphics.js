@@ -12,6 +12,8 @@ export class Graphics
 
     phaserGraphics;
 
+    phaserText;
+
     static getInstance(){
 
         if( typeof(this.instance) === "undefined"){
@@ -29,6 +31,18 @@ export class Graphics
 
     setPhaserGraphics(phaserGraphics){
         this.phaserGraphics = phaserGraphics;
+    }
+
+    setPhaserText(phaserText){
+        this.phaserText = phaserText;
+    }
+
+
+    getPhaserText(phaserText){
+        if(typeof(this.phaserText) === "undefined"){
+            throw new Error("phaserText not initialized, set it via setPhaserText()")
+        }
+        return this.phaserText
     }
 
     clear(){
@@ -62,8 +76,8 @@ export class Graphics
     }
 
     drawPointer(){
-        if (Pointer.centerHex.y >= 0 && Pointer.centerHex.x >= 0) {
-            let positionPointerHex = Conversion.pixel2Offset(Pointer.centerHex);
+        if (Pointer.getPosition().y >= 0 && Pointer.getPosition().x >= 0) {
+            let positionPointerHex = Conversion.pixel2Offset(Pointer.getPosition());
             if (positionPointerHex.q < GameMap.getInstance().getSize().q && positionPointerHex.r < GameMap.getInstance().getSize().r) {
                 this.getPhaserGraphics().lineStyle(3, 0xe83331);
                 let hexCorners = this.getHexCorners(positionPointerHex);
@@ -104,5 +118,15 @@ export class Graphics
                 this.getPhaserGraphics().strokePoints(hexCorners, true);
                 this.getPhaserGraphics().fillPath();
             });
+    }
+
+    drawDebugInfo(){
+        let cube = Conversion.pixel2Cube(Pointer.getPosition());
+        let round_cube = Conversion.cubeRound(cube);
+        let round_hex = Conversion.cube2Offset(round_cube);
+
+        this.getPhaserText().text = 'Cursor\n x:' + Pointer.getPosition().x + "\n" + ' y:' + Pointer.getPosition().y + "\n" +
+            'Hex\n r:' + round_hex.r + "\n" + ' q:' + round_hex.q + "\n" +
+            'Cube\n x:' + round_cube.x + "\n" + ' y:' + round_cube.y + "\n" + ' z:' + round_cube.z + "\n";
     }
 }

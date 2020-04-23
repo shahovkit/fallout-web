@@ -41,11 +41,7 @@ export class Path
      * @returns array
      */
     static findPath(start, goal) {
-        // if(debug == true){
-        //   debugger;
-        // }
         this.finalPathNeighbors = [];
-        //time = performance.now();
         const frontier = new PriorityQueue();  // List of the places to explore next
         const came = [];// List of where we've already been - "from" and The price we paid to go there - "cost"
         let found = false;
@@ -56,7 +52,6 @@ export class Path
         while (frontier.length() > 0) {
 
             const current = frontier.pop();
-            //const currentHex = map[current.q][current.r];
 
             const nears = NearHex.getNears(current);
 
@@ -80,7 +75,6 @@ export class Path
                 }
             }
         }
-
         // BUILD PATH BACK FROM GOAL
         if (goal && found) {
             let current = goal;
@@ -90,7 +84,7 @@ export class Path
                 current = Path.findFromHex(came, current).from;
                 path.push(current);
             }
-            //time = performance.now() - time;
+            path.pop();
             return path.reverse();
 
         } else {

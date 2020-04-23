@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Socket.IO</title>
+    <title>Fallout Online</title>
 </head>
 <body>
 <style>
@@ -14,126 +14,6 @@
 </style>
 <script src="res/vendor/Socket.io.js"></script>
 <script src="res/vendor/Phaser.js"></script>
-<script type="module">
-    import {Player} from './res/Player.js'
-    import {Units} from './res/Units.js'
-    import {Conversion} from './res/Conversion.js'
-    import {Constants} from './res/Constants.js'
-    import {GameMap} from './res/GameMap.js'
-    import {Graphics} from './res/Graphics.js'
-    import {Path} from './res/Path.js'
-    import {Pointer} from './res/Pointer.js'
-
-    let graphics;
-    let player = new Player();
-    let coord;
-    let stages = 0;
-    let path1, path2;
-    let debug = false;
-    let phaser;
-    let world = {
-        players:{
-            current:player
-        }
-    };
-
-    var phaserGame = new Phaser.Game({
-        type: Phaser.AUTO,
-        width: 1920,
-        height: 1080,
-        scene: {
-            create: gameInit,
-            update: gameLoop
-        }
-    });
-
-    function gameInit() {
-        phaser = this;
-        graphics = phaser.add.graphics();
-        Graphics.getInstance().setPhaserGraphics(graphics);
-        coord = phaser.add.text(40, 60);
-
-        phaser.input.on('pointermove', pointermove);
-        phaser.input.on('pointerdown', pointerdown);
-
-    }
-
-    function gameLoop() {
-
-        Graphics.getInstance().clear();
-        Graphics.getInstance().drawPointer();
-        Graphics.getInstance().drawCollision();
-        Graphics.getInstance().drawPlayer(player);
-        Graphics.getInstance().drawPath();
-    }
-
-    function pointerdown(pointer) {
-        let hex = Conversion.pixel2Offset({x: pointer.x, y: pointer.y});
-        if (
-            Pointer.centerHex.y >= 0 &&
-            Pointer.centerHex.x >= 0 &&
-            hex.q < GameMap.getInstance().getSize().q &&
-            hex.r < GameMap.getInstance().getSize().r &&
-            GameMap.getInstance().getHexes()[hex.r][hex.q].collision === false
-        ) {
-            switch (stages) {
-                case 0:
-                    path1 = hex;
-                    stages = 1;
-                    break;
-                case 1:
-                    path2 = hex;
-                    debug = true;
-                    Path.findPath(path1, path2);
-                    stages = 2;
-                    //console.log(time);
-                    break;
-                case 2:
-                    debug = false;
-                    Path.finalPath = [];
-                    Path.finalPathNeighbors = [];
-                    path1 = undefined;
-                    path2 = undefined;
-                    stages = 0;
-                    break;
-            }
-            path2 = hex;
-            Path.finalPath = Path.findPath(world.players.current.getCoordinates(), path2);
-            Path.finalPath.shift();
-            world.players.current.goByPath(Path.finalPath)
-
-        }
-    }
-
-    function pointermove(pointer) {
-        Pointer.position = {x: pointer.x, y: pointer.y};
-        var cube = Conversion.pixel2Cube({x: pointer.x, y: pointer.y});
-        var round_cube = Conversion.cubeRound(cube);
-        var round_hex = Conversion.cube2Offset(round_cube);
-        Pointer.centerHex = Conversion.hex_to_pixel(round_hex);
-        path2 = round_hex;
-
-        var offsetToCube = Conversion.offset2Cube(round_hex);
-        if (
-            Pointer.centerHex.y >= 0 &&
-            Pointer.centerHex.x >= 0 &&
-            round_hex.q < GameMap.getInstance().getSize().q &&
-            round_hex.r < GameMap.getInstance().getSize().r &&
-            typeof path1 !== "undefined" &&
-            stages === 1 &&
-            GameMap.getInstance().getHexes()[round_hex.r][round_hex.q].collision === false
-        ) {
-            Path.findPath(path1, path2);
-        }
-
-        coord.text = 'Cursor\n x:' + pointer.x + "\n" + ' y:' + pointer.y + "\n" +
-            'Hex\n r:' + round_hex.r + "\n" + ' q:' + round_hex.q + "\n" +
-            'Cube\n x:' + round_cube.x + "\n" + ' y:' + round_cube.y + "\n" + ' z:' + round_cube.z + "\n"+
-            'Offset2Cube\n x:' + offsetToCube.x + "\n" + ' y:' + offsetToCube.y + "\n" + ' z:' + offsetToCube.z + "\n";
-
-    }
-
-
-</script>
+<script type="module" src="res/index.js"></script>
 </body>
 </html>
