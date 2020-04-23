@@ -1,0 +1,2 @@
+# Deploy
+$docker-compose up
