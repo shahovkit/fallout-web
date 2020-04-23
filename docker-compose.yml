@@ -1,0 +1,9 @@
+version: "3.4"
+
+services:
+  fallout:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8802:8802"
