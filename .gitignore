@@ -2,3 +2,4 @@ server/node_modules/*
 package-lock.json
 env.js
 /.idea
+node_modules
