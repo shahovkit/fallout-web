@@ -3,11 +3,9 @@ FROM node:10
 
 RUN mkdir -p /app/node_modules && chown -R node:node /app
 
-RUN mkdir -p /app1/test/
-
 WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json .
 
 USER node
 

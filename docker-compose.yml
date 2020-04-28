@@ -2,11 +2,9 @@ version: "3.4"
 
 services:
   fallout:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    build: ./
     ports:
       - "8802:8802"
     volumes:
-      - .:/app/
-      - ./node_modules:/app/node_modules
+      - .:/app
+      - /app/node_modules
