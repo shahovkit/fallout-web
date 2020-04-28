@@ -1,3 +1,8 @@
+import {Pointer} from "./Pointer.js";
+import {GameMap} from "./GameMap.js";
+import {Path} from "./Path.js";
+import {H} from "./H.js";
+
 export class Player
 {
 
@@ -9,10 +14,28 @@ export class Player
 
     COEFFICIENT_SPEED = 1000;
 
-    constructor(){
+    constructor() {
         this.coordinates = {q:0,r:0};
         this.speed = 0.3;
         this.isRunPathIteration = false;
+    }
+
+    goToHex(hex) {
+        if (
+            !Pointer.isPointerOnMap()
+            || !GameMap.getInstance().isNotCollision(Pointer.getHexPosition())
+        ) {
+            return console.log('Невозможно переместиться в этот гекс');
+        }
+
+        Path.finalPath = Path.findPath(this.getHexPosition(), Pointer.getHexPosition());
+
+        if(!H.isset(Path.finalPath)){
+            return console.log('Невозможно переместиться в этот гекс');
+        }
+
+       this.goByPath(Path.finalPath);
+
     }
 
     goByPath(path) {
@@ -38,9 +61,11 @@ export class Player
         }
     };
 
-    getCoordinates() {
+    getHexPosition() {
         return this.coordinates;
     }
+
+
 
     setCoordinates(hex) {
         this.coordinates = hex;

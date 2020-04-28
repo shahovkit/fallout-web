@@ -32,6 +32,7 @@ function gameInit() {
     phaser.input.on('pointerdown', pointerdown);
 
 }
+
 function gameLoop() {
     Graphics.getInstance().clear();
     Graphics.getInstance().drawPointer();
@@ -41,12 +42,7 @@ function gameLoop() {
 }
 
 function pointerdown() {
-    let hex = Conversion.pixel2Offset(Pointer.getPosition());
-    if (Pointer.isPointerOnMap() && GameMap.getInstance().isNotCollision(hex)) {
-        Path.finalPath = Path.findPath(player.getCoordinates(), hex);
-        player.goByPath(Path.finalPath)
-
-    }
+    player.goToHex(Pointer.getHexPosition());
 }
 
 function pointermove() {

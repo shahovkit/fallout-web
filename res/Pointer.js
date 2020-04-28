@@ -3,16 +3,17 @@ import {GameMap} from "./GameMap.js";
 
 export class Pointer
 {
-    static position = {x: 0, y: 0};
-
     static pointer;
 
-    static getPosition(){
+    static getPosition() {
         return {x: this.pointer.x, y: this.pointer.y};
     }
 
+    static getHexPosition() {
+        return Conversion.pixel2Offset(this.getPosition())
+    }
 
-    static setPointer(pointer){
+    static setPointer(pointer) {
         this.pointer = pointer;
     }
 

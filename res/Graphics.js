@@ -4,6 +4,7 @@ import {GameMap} from "./GameMap.js";
 import {Pointer} from "./Pointer.js";
 import {Constants} from "./Constants.js";
 import {Path} from "./Path.js";
+import {H} from "./H.js";
 
 export class Graphics
 {
@@ -104,20 +105,21 @@ export class Graphics
     drawPlayer(player){
         this.getPhaserGraphics().lineStyle(3, 0xe83331);
         this.getPhaserGraphics().fillStyle(0x2a42ff);
-        let hexCorners = this.getHexCorners(player.getCoordinates());
+        let hexCorners = this.getHexCorners(player.getHexPosition());
         this.getPhaserGraphics().strokePoints(hexCorners, true);
         this.getPhaserGraphics().fillPath();
     }
 
     drawPath() {
-        if (Path.finalPath.length > 0)
+        if (H.isset(Path.finalPath)) {
             Path.finalPath.forEach((hex) => {
                 this.getPhaserGraphics().lineStyle(3, 0xe83331);
                 this.getPhaserGraphics().fillStyle(0x6600a5, 1);
-                let hexCorners = this.getHexCorners(Units.Hex(hex.r,hex.q));
+                let hexCorners = this.getHexCorners(Units.Hex(hex.r, hex.q));
                 this.getPhaserGraphics().strokePoints(hexCorners, true);
                 this.getPhaserGraphics().fillPath();
             });
+        }
     }
 
     drawDebugInfo(){
