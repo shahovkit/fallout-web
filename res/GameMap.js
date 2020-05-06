@@ -4,28 +4,23 @@ import {Units} from "./Units.js";
 
 export class GameMap
 {
-    hexes = [];
+    constructor(){
+        if( typeof(this.instance) !== "undefined"){
+            throw new Error("Object already exist, use getInstance() instead new")
+        }
+        this.collision = [];
+        this.hexes = [];
+        this.size = {r: 0, q: 0};
+        this.instance = this;
+        this.init();
 
-    size = {r: 0, q: 0};
-
-    collision = [];
-
-    static instance;
+    }
 
     static getInstance(){
         if( typeof(this.instance) === "undefined"){
             this.instance = new this();
         }
         return this.instance
-    }
-
-     constructor(){
-         if( typeof(this.instance) !== "undefined"){
-             throw new Error("Object already exist, use getInstance() instead new")
-         }
-        this.instance = this;
-        this.init();
-
     }
 
     isNotCollision(hex){
@@ -74,11 +69,11 @@ export class GameMap
     }
 
     init(){
-        this.setSize(Constants.mapSize.r, Constants.mapSize.q);
+        this.setSize(Constants.getMapSize().r, Constants.getMapSize().q);
 
         this.hexes = ArrayHelper.multiArray(this.getSize().r, this.getSize().q);
 
-        this.setCollision(Constants.colission);
+        this.setCollision(Constants.getCollision());
 
         this.initCollision();
     }

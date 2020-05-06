@@ -3,7 +3,7 @@ import {GameMap} from "./GameMap.js";
 
 export class NearHex {
 
-    static getOffsetDirection(isOffset, direction){
+    static getOffsetDirection(isOffset, direction) {
 
         let offsets =  [
             [
@@ -21,7 +21,7 @@ export class NearHex {
      * @param {Units.Hex} hex The date
      * @param {int} direction The string
      */
-    static getNearHexByDirection = (hex, direction) => {
+    static getNearHexByDirection(hex, direction) {
         var isOffset = hex.r & 1;
         var offset = this.getOffsetDirection(isOffset, direction);
         var hexf = Units.Hex(hex.r + offset[1], hex.q + offset[0]);
@@ -31,7 +31,7 @@ export class NearHex {
     /**
      * @param {Units.Hex} hex The date
      */
-    static getNears = (hex) => {
+    static getNears(hex) {
         let nearHexes = [];
         for (let direction = 0; direction <= 5; direction++) {
             let nearHex = this.getNearHexByDirection(hex, direction);

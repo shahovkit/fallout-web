@@ -4,9 +4,9 @@
 
 export class PriorityQueue
 {
-    heap = [];
 
     constructor(arr) {
+        this.heap = [];
         if (arr) for (i=0; i< arr.length; i++)
             this.heap.push(arr[i][0], arr[i][1]);
     }

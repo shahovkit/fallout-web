@@ -3,7 +3,7 @@ import {GameMap} from "./GameMap.js";
 
 export class Pointer
 {
-    static pointer;
+    //static pointer;
 
     static getPosition() {
         return {x: this.pointer.x, y: this.pointer.y};

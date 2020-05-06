@@ -1,7 +1,6 @@
 import {Player} from './Player.js'
 import {Graphics} from './Graphics.js'
 import {Pointer} from './Pointer.js'
-import {H} from "./H.js";
 
 let player;
 
@@ -20,26 +19,17 @@ let socket;
 window.send = (event, msg) => {
     socket.send({'event':event,'body':msg});
     return;
-}
+};
 
 window.chat = (msg) => {
     return send('chatSentMessage',msg);
-}
+};
 
-socket = io.connect('http://127.0.0.1:8802');
+socket = io.connect('ws://127.0.0.1:8802',{transports: ['websocket']});
 
 socket.on('connect', function () {
-
     socket.on('message', function (msg) {
         console.log(msg);
-
-        if(H.isset(msg.event)){
-            switch (msg.event) {
-                case "changeCoordinates":
-                    player.setCoordinates(msg.body);
-                break;
-            }
-        }
     });
 });
 

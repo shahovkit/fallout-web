@@ -9,11 +9,14 @@ import {H} from "./H.js";
 export class Graphics
 {
 
-    static instance;
+    constructor(){
 
-    phaserGraphics;
-
-    phaserText;
+        if( typeof(this.instance) !== "undefined"){
+            throw new Error("Object already exist, use getInstance() instead new")
+        }
+        this.phaserText = {};
+        this.phaserGraphics = {};
+    }
 
     static getInstance(){
 
@@ -50,15 +53,6 @@ export class Graphics
         this.phaserGraphics.clear();
     }
 
-    /**
-     * DON'T USE IT
-     */
-    constructor(){
-        if( typeof(this.instance) !== "undefined"){
-            throw new Error("Object already exist, use getInstance() instead new")
-        }
-    }
-
     static initGame(){
 
     }
@@ -67,11 +61,11 @@ export class Graphics
     getHexCorners(hex) {
         let hexCenter = Conversion.hex_to_pixel(hex);
         var coords = [];
-        for (let i = 1; i <= Constants.hexCorners; i++) {
+        for (let i = 1; i <= Constants.getHexCorners(); i++) {
             var angle_deg = 60 * i - 30;
             var angle_rad = Math.PI / 180 * angle_deg;
-            coords.push(Units.Point(hexCenter.x + Constants.sizeHex.x * Math.cos(angle_rad),
-                hexCenter.y + Constants.sizeHex.y * Math.sin(angle_rad)));
+            coords.push(Units.Point(hexCenter.x + Constants.getSizeHex().x * Math.cos(angle_rad),
+                hexCenter.y + Constants.getSizeHex().y * Math.sin(angle_rad)));
         }
         return coords;
     }

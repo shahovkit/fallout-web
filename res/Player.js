@@ -6,17 +6,11 @@ import {H} from "./H.js";
 export class Player
 {
 
-    coordinates;//hex
-    speed; //seconds per hex
-    currentPath;//current path that by will be go'.
-
-    isRunPathIteration;
-
-    COEFFICIENT_SPEED = 1000;
-
     constructor() {
+        this.COEFFICIENT_SPEED = 1000;
         this.coordinates = {q:0,r:0};
         this.speed = 0.3;
+        this.currentPath = [];
         this.isRunPathIteration = false;
     }
 

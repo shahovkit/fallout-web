@@ -3,8 +3,6 @@ import {Constants} from './Constants.js'
 
 export class Conversion
 {
-  static size = Constants.sizeHex;
-
   static offset2Cube(hex) {
     var x = hex.q - (hex.r - (hex.r&1)) / 2;
     var z = hex.r;
@@ -18,8 +16,8 @@ export class Conversion
   }
 
   static pixel2Cube(point) {
-    var x = Math.sqrt(3) * point.x / 3 / this.size.x - point.y / 3 / this.size.y;
-    var z = 2/3 * point.y / this.size.y;
+    var x = Math.sqrt(3) * point.x / 3 / Constants.getSizeHex().x - point.y / 3 / Constants.getSizeHex().y;
+    var z = 2/3 * point.y / Constants.getSizeHex().y;
     return Units.Cube(x, -x-z, z);
   }
 
@@ -28,14 +26,14 @@ export class Conversion
   }
 
   static hex_to_pixel(hex) {
-    var x = this.size.x * (Math.sqrt(3) * hex.q + (Math.sqrt(3) / 2) * (hex.r&1));
-    var y = this.size.y * 3/2 * hex.r;
+    var x = Constants.getSizeHex().x * (Math.sqrt(3) * hex.q + (Math.sqrt(3) / 2) * (hex.r&1));
+    var y = Constants.getSizeHex().y * 3/2 * hex.r;
     return Units.Point(x, y);
   }
 
   static pixel_to_axial(point) {
-    var q = Math.sqrt(3) * point.x / 3 / this.size.x - point.y / 3 / this.size.y;
-    var r = (2/3 * point.y) / this.size.y;
+    var q = Math.sqrt(3) * point.x / 3 / Constants.getSizeHex().x - point.y / 3 / Constants.getSizeHex().y;
+    var r = (2/3 * point.y) / Constants.getSizeHex().y;
     return Units.Hex(r, q)
   }
 

@@ -11,8 +11,8 @@ import {NearHex} from "./NearHex.js";
 
 export class Path
 {
-    static finalPathNeighbors = [];
-    static finalPath = [];
+    //static finalPathNeighbors = [];
+    //static finalPath = [];
 
     //get "to" hexes
     static getIndexHexes(cames) {
