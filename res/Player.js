@@ -23,15 +23,15 @@ export class Player
     goToHex(hex) {
         if (
             !Pointer.isPointerOnMap()
-            || !GameMap.getInstance().isNotCollision(Pointer.getHexPosition())
+            || !GameMap.getInstance().isNotCollision(hex)
         ) {
-            return console.log('Невозможно переместиться в этот гекс');
+            throw 'Невозможно переместиться в этот гекс';
         }
 
-        Path.finalPath = Path.findPath(this.getHexPosition(), Pointer.getHexPosition());
+        Path.finalPath = Path.findPath(this.getHexPosition(), hex);
 
         if(!H.isset(Path.finalPath)){
-            return console.log('Невозможно переместиться в этот гекс');
+            throw 'Невозможно переместиться в этот гекс';
         }
 
        this.goByPath(Path.finalPath);
@@ -51,7 +51,7 @@ export class Player
             this.isRunPathIteration=true;
             setTimeout(
                 ()=>{
-                    this.coordinates = this.currentPath.shift();
+                    this.setCoordinates(this.currentPath.shift());
                     this.pathIteration();
                 },
                 this.COEFFICIENT_SPEED*this.speed
@@ -64,8 +64,6 @@ export class Player
     getHexPosition() {
         return this.coordinates;
     }
-
-
 
     setCoordinates(hex) {
         this.coordinates = hex;

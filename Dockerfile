@@ -1,9 +1,10 @@
-FROM node:10
-
+FROM node:12
 
 RUN mkdir -p /app/node_modules && chown -R node:node /app
 
 WORKDIR /app
+
+RUN npm install -g nodemon
 
 COPY package*.json .
 
@@ -15,4 +16,4 @@ COPY --chown=node:node . .
 
 EXPOSE 8802
 
-CMD [ "node", "app.js" ]
+CMD [ "nodemon", "app.js" ]

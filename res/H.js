@@ -1,3 +1,4 @@
+//Helper
 export class H
 {
     static isset(variable){
