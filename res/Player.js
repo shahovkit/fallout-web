@@ -6,12 +6,13 @@ import {H} from "./H.js";
 export class Player
 {
 
-    constructor() {
+    constructor(socketId, hex) {
         this.COEFFICIENT_SPEED = 1000;
-        this.coordinates = {q:0,r:0};
+        this.coordinates = hex;
         this.speed = 0.3;
         this.currentPath = [];
         this.isRunPathIteration = false;
+        this.id = socketId;
     }
 
     goToHex(hex) {

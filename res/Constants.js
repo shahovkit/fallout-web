@@ -13,6 +13,7 @@ export class Constants
     }
 
     static getCollision(){
+        return [];
         return [
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],

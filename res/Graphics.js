@@ -97,6 +97,8 @@ export class Graphics
     }
 
     drawPlayer(player){
+        if(!H.isset(player)) return false;
+
         this.getPhaserGraphics().lineStyle(3, 0xe83331);
         this.getPhaserGraphics().fillStyle(0x2a42ff);
         let hexCorners = this.getHexCorners(player.getHexPosition());
