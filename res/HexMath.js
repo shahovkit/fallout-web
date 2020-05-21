@@ -1,4 +1,4 @@
-export class HexMath
+class HexMath
 {
 
   static cubeAdd (cube, cube2) {

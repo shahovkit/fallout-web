@@ -1,4 +1,4 @@
-export class Units
+class Units
 {
   static Point(x, y) {
     return {x:x, y:y}

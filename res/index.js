@@ -1,7 +1,7 @@
-import {Player} from './Player.js'
-import {Graphics} from './Graphics.js'
-import {Pointer} from './Pointer.js'
-import {Units} from "./Units.js";
+// import {Player} from './Player.js'
+// import {Graphics} from './Graphics.js'
+// import {Pointer} from './Pointer.js'
+//import {Units} from "./Units.js";
 
 Array.prototype.removeObjByProp = function(key, value) {
     for (let i = this.length - 1; i >= 0; --i) {
@@ -10,12 +10,21 @@ Array.prototype.removeObjByProp = function(key, value) {
         }
     }
 
+
+
     return this;
 };
 
 let game = {
     players : []
 };
+
+function getPlayerById(id)
+{
+    return game.players.filter(obj => {
+        return obj.id === id;
+    })[0];
+}
 
 let phaser = new Phaser.Game({
     type: Phaser.AUTO,
@@ -42,6 +51,7 @@ function gameInit() {
 
     socket.on('connect', function () {
 
+        game.players = [];
         socket.on('playerInitPosition', function (hex) {
             //game.players.push(new Player(socket.id, hex));
         });
@@ -50,8 +60,8 @@ function gameInit() {
             console.log(msg);
         });
 
-        socket.on('update', function (data) {
-            data.forEach((playerServer) => {
+        socket.on('update', function (players) {
+            players.forEach((playerServer) => {
 
                 let isHasPlayer = false;
 
@@ -68,9 +78,16 @@ function gameInit() {
                 }
 
             });
+
+            if(players.length !== game.players.length){
+                players.forEach((playerServer) => {
+
+                });
+            }
         });
 
         socket.on('youJoin', function (data) {
+
             console.log(data);
         });
 
@@ -106,13 +123,12 @@ function gameLoop() {
     game.players.forEach((player)=>{
         Graphics.getInstance().drawPlayer(player);
     });
-    Graphics.getInstance().drawPath();
+    //Graphics.getInstance().drawPath();
 }
 
 function pointerdown() {
     socket.emit('goToHex', Pointer.getHexPosition());
-    //send('goToHex', Pointer.getHexPosition());
-    game.players.goToHex(Pointer.getHexPosition());
+    //getPlayerById(socket.id).goToHex(Pointer.getHexPosition());
 }
 
 function pointermove() {

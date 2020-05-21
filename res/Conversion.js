@@ -1,7 +1,7 @@
-import {Units} from './Units.js'
-import {Constants} from './Constants.js'
+// import {Units} from './Units.js'
+// import {Constants} from './Constants.js'
 
-export class Conversion
+class Conversion
 {
   static offset2Cube(hex) {
     var x = hex.q - (hex.r - (hex.r&1)) / 2;

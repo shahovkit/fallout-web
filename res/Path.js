@@ -3,13 +3,13 @@
  * http://www.redblobgames.com/pathfinding/a-star/implementation.html
   */
 
-import {PriorityQueue} from "./PriorityQueue.js";
-import {HexMath} from "./HexMath.js";
-import {NearHex} from "./NearHex.js";
+// import {PriorityQueue} from "./PriorityQueue.js";
+// import {HexMath} from "./HexMath.js";
+// import {NearHex} from "./NearHex.js";
 
 
 
-export class Path
+ class Path
 {
     //static finalPathNeighbors = [];
     //static finalPath = [];

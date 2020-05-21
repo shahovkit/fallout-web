@@ -1,4 +1,4 @@
-export class ArrayHelper
+class ArrayHelper
 {
     // ARRAY SHUFFLE
     // From: http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array

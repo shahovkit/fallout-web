@@ -1,9 +1,9 @@
-import {Pointer} from "./Pointer.js";
-import {GameMap} from "./GameMap.js";
-import {Path} from "./Path.js";
-import {H} from "./H.js";
+// import {Pointer} from "./Pointer.js";
+//import {GameMap} from "./GameMap.js";
+// import {Path} from "./Path.js";
+// import {H} from "./H.js";
 
-export class Player
+class Player
 {
 
     constructor(socketId, hex) {
@@ -18,7 +18,7 @@ export class Player
     goToHex(hex) {
         if (
             !Pointer.isPointerOnMap()
-            || !GameMap.getInstance().isNotCollision(hex)
+            //|| !GameMap.getInstance().isNotCollision(hex)
         ) {
             throw 'Невозможно переместиться в этот гекс';
         }
@@ -68,4 +68,8 @@ export class Player
         this.speed = newSpeed;
     }
 
+}
+
+if(window === undefined){
+    module.exports = Player;
 }
