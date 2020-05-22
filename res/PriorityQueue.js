@@ -2,7 +2,7 @@
 // From: https://jsfiddle.net/GRIFFnDOOR/r7tvg/
 // Savagely adapted/mangled!
 
-class PriorityQueue
+export class PriorityQueue
 {
 
     constructor(arr) {

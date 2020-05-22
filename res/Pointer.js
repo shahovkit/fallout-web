@@ -1,7 +1,7 @@
-// import {Conversion} from "./Conversion.js";
-// import {GameMap} from "./GameMap.js";
+import {Conversion} from "./Conversion.js";
+import {GameMap} from "./GameMap.js";
 
-class Pointer
+export class Pointer
 {
     //static pointer;
 

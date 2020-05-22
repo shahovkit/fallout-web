@@ -1,7 +1,7 @@
-// import {Units} from "./Units.js";
-// import {GameMap} from "./GameMap.js";
+import {Units} from "./Units.js";
+import {GameMap} from "./GameMap.js";
 
-class NearHex {
+export class NearHex {
 
     static getOffsetDirection(isOffset, direction) {
 

@@ -1,4 +1,4 @@
-class Constants
+export class Constants
 {
     static getSizeHex(){
         return {x: 32, y: 16};

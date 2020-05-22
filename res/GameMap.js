@@ -1,8 +1,8 @@
-// import {ArrayHelper} from "./ArrayHelper.js";
-// import {Constants} from "./Constants.js";
-// import {Units} from "./Units.js";
+import {ArrayHelper} from "./ArrayHelper.js";
+import {Constants} from "./Constants.js";
+import {Units} from "./Units.js";
 
-class GameMap
+export class GameMap
 {
     constructor(){
         if( typeof(this.instance) !== "undefined"){

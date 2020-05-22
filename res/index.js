@@ -1,7 +1,7 @@
-// import {Player} from './Player.js'
-// import {Graphics} from './Graphics.js'
-// import {Pointer} from './Pointer.js'
-//import {Units} from "./Units.js";
+import {Player} from './Player.js'
+import {Graphics} from './Graphics.js'
+import {Pointer} from './Pointer.js'
+import {Units} from "./Units.js";
 
 Array.prototype.removeObjByProp = function(key, value) {
     for (let i = this.length - 1; i >= 0; --i) {
@@ -9,8 +9,6 @@ Array.prototype.removeObjByProp = function(key, value) {
             this.splice(i,1);
         }
     }
-
-
 
     return this;
 };
@@ -78,16 +76,9 @@ function gameInit() {
                 }
 
             });
-
-            if(players.length !== game.players.length){
-                players.forEach((playerServer) => {
-
-                });
-            }
         });
 
         socket.on('youJoin', function (data) {
-
             console.log(data);
         });
 

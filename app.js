@@ -60,12 +60,14 @@ io.sockets.on('connection', function (socket) {
         coordinates: { q:randomByInterval(0,10),r:randomByInterval(0,10)}
     });
 
+
+
     console.log('пользователь ' + socket.id + ' зашел на сервер');
     console.log(server.game.players);
 
     socket.emit('youJoin','Ваш ID: ' + socket.id + ', вы зашли на сервер');
 
-    //socket.emit('playerInitPosition',getPlayerById(socket.id).coordinates);
+    socket.emit('playerInitPosition',getPlayerById(socket.id).coordinates);
 
     socket.broadcast.emit('playerJoin','пользователь ' + socket.id + ' зашел на сервер');
 
@@ -75,7 +77,6 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('goToHex', function (res) {
         console.log('Пользователь перемещается в клетку r:' + res.r + ' q:' + res.q);
-        getPlayerById(socket.id).coordinates = res;
     });
 
     socket.on('disconnect', function() {

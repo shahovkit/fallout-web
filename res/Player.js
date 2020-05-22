@@ -1,9 +1,9 @@
-// import {Pointer} from "./Pointer.js";
-//import {GameMap} from "./GameMap.js";
-// import {Path} from "./Path.js";
-// import {H} from "./H.js";
+import {Pointer} from "./Pointer.js";
+import {GameMap} from "./GameMap.js";
+import {Path} from "./Path.js";
+import {H} from "./H.js";
 
-class Player
+export class Player
 {
 
     constructor(socketId, hex) {
@@ -68,8 +68,4 @@ class Player
         this.speed = newSpeed;
     }
 
-}
-
-if(window === undefined){
-    module.exports = Player;
 }
