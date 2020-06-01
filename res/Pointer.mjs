@@ -1,5 +1,5 @@
-import {Conversion} from "./Conversion.js";
-import {GameMap} from "./GameMap.js";
+import {Conversion} from "./Conversion.mjs";
+import {GameMap} from "./GameMap.mjs";
 
 export class Pointer
 {

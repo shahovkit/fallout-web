@@ -16,4 +16,4 @@ COPY --chown=node:node . .
 
 EXPOSE 8802
 
-CMD [ "nodemon", "app.js" ]
+CMD [ "nodemon", "--experimental-modules", "app.mjs" ]

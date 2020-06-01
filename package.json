@@ -2,7 +2,7 @@
   "name": "fallout-web",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "app.mjs",
   "dependencies": {
     "express": "^4.16.4",
     "phaser": "^3.16.1",

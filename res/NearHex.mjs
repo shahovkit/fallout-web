@@ -1,5 +1,5 @@
-import {Units} from "./Units.js";
-import {GameMap} from "./GameMap.js";
+import {Units} from "./Units.mjs";
+import {GameMap} from "./GameMap.mjs";
 
 export class NearHex {
 

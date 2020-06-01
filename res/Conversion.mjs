@@ -1,5 +1,5 @@
-import {Units} from './Units.js'
-import {Constants} from './Constants.js'
+import {Units} from './Units.mjs'
+import {Constants} from './Constants.mjs'
 
 export class Conversion
 {

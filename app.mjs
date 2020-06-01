@@ -1,8 +1,14 @@
-let express = require('express');
+import express from 'express';
+import http from 'http';
+import socketIo from 'socket.io';
+import path from 'path';
+import {Player} from "./res/Player.mjs";
+
 let app = express();
-let server = require('http').Server(app);
-let io = require('socket.io')(server);
-//var gameServer = require('./res/server/gameServer').GameServer;
+let server = http.Server(app);
+let io = socketIo(server);
+let __dirname = path.resolve();
+
 server.game = {
     players:[],
     map:[]
@@ -77,6 +83,7 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('goToHex', function (res) {
         console.log('Пользователь перемещается в клетку r:' + res.r + ' q:' + res.q);
+        //getPlayerById(socket.id).coordinates = res;
     });
 
     socket.on('disconnect', function() {
