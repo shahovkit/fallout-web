@@ -1,8 +1,8 @@
 import {Conversion} from "./Conversion.mjs";
 import {GameMap} from "./GameMap.mjs";
+import {H} from "./H.mjs";
 
-export class Pointer
-{
+export class Pointer {
     //static pointer;
 
     static getPosition() {
@@ -17,8 +17,14 @@ export class Pointer
         this.pointer = pointer;
     }
 
-    static isPointerOnMap() {
-        let hex = Conversion.pixel2Offset(this.getPosition());
+    static isPointerOnMap(position = {}) {
+
+        let hex = position;
+
+        if (!H.isset(position)) {
+            hex = Conversion.pixel2Offset(this.getPosition());
+        }
+
         return hex.q >= 0
             && hex.r >= 0
             && hex.q < GameMap.getInstance().getSize().q

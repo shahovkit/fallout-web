@@ -1,17 +1,8 @@
 import {Player} from './Player.mjs'
 import {Graphics} from './Graphics.mjs'
 import {Pointer} from './Pointer.mjs'
+import {H} from './H.mjs'
 import {Units} from "./Units.mjs";
-
-Array.prototype.removeObjByProp = function(key, value) {
-    for (let i = this.length - 1; i >= 0; --i) {
-        if (this[i][key] === value) {
-            this.splice(i,1);
-        }
-    }
-
-    return this;
-};
 
 let game = {
     players : []
@@ -33,13 +24,6 @@ window.chat = (msg) => {
     socket.emit('chatSend',msg);
     return console.log(msg);
 };
-
-function getPlayerById(id)
-{
-    return game.players.filter(obj => {
-        return obj.id === id;
-    })[0];
-}
 
 socket = io.connect('ws://127.0.0.1:8802',{transports: ['websocket']});
 
@@ -87,7 +71,8 @@ function gameInit() {
 
 
         socket.on('disconnectUser', function (socketID) {
-            game.players.removeObjByProp('id',socketID);
+            H.removeObjByProp(game.players, 'id', socketID);
+
             console.log('Пользователь ' + socketID + ' вышел с сервера');
         });
 
@@ -119,7 +104,7 @@ function gameLoop() {
 function pointerdown() {
     socket.emit('goToHex', Pointer.getHexPosition());
     //send('goToHex', Pointer.getHexPosition());
-    //getPlayerById(socket.id).goToHex(Pointer.getHexPosition());
+    //H.getPlayerById(socket.id, game.players).goToHex(Pointer.getHexPosition());
 }
 
 function pointermove() {

@@ -8,6 +8,7 @@ export class Player
 
     constructor(socketId, hex) {
         this.COEFFICIENT_SPEED = 1000;
+
         this.coordinates = hex;
         this.speed = 0.3;
         this.currentPath = [];
@@ -17,7 +18,7 @@ export class Player
 
     goToHex(hex) {
         if (
-            !Pointer.isPointerOnMap()
+            !Pointer.isPointerOnMap(hex)
             || !GameMap.getInstance().isNotCollision(hex)
         ) {
             throw 'Невозможно переместиться в этот гекс';
