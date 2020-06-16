@@ -25,7 +25,7 @@ window.chat = (msg) => {
     return console.log(msg);
 };
 
-socket = io.connect('ws://127.0.0.1:8802',{transports: ['websocket']});
+socket = io.connect('ws://' + window.location.hostname + ':8802',{transports: ['websocket']});
 
 
 

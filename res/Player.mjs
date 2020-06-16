@@ -21,13 +21,13 @@ export class Player
             !Pointer.isPointerOnMap(hex)
             || !GameMap.getInstance().isNotCollision(hex)
         ) {
-            throw 'Невозможно переместиться в этот гекс';
+            return console.log( 'Невозможно переместиться в этот гекс');
         }
 
         Path.finalPath = Path.findPath(this.getHexPosition(), hex);
 
         if(!H.isset(Path.finalPath)){
-            throw 'Невозможно переместиться в этот гекс';
+            return console.log( 'Невозможно переместиться в этот гекс');
         }
 
        this.goByPath(Path.finalPath);
