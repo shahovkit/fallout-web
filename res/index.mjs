@@ -7,16 +7,24 @@ import {Units} from "./Units.mjs";
 let game = {
     players : []
 };
+//debug info player each 5 seconds to console
+setInterval(()=>{console.log(game.players)},1000);
 
-let phaser = new Phaser.Game({
+const config = {
     type: Phaser.AUTO,
     width: 1920,
     height: 1080,
     scene: {
+        preload: preload,
         create: gameInit,
         update: gameLoop
-    }
-});
+    },
+    render: {
+        pixelArt: true
+    },
+};
+
+let phaser = new Phaser.Game(config);
 
 let socket;
 
@@ -27,12 +35,20 @@ window.chat = (msg) => {
 
 socket = io.connect('ws://' + window.location.hostname, {transports: ['websocket']});
 
-
-
 function gameInit() {
+    this.input.on('pointermove', pointermove);
+    this.input.on('pointerdown', pointerdown);
+}
+
+function preload() {
+    Graphics.getInstance().phaser = this;
+    Graphics.getInstance().phaserGraphics = this.add.graphics();
+    Graphics.getInstance().phaserText = this.add.text(40, 60);
+    Pointer.setPointer(this.input.mousePointer);
+
+    Graphics.getInstance().preload();
 
     socket.on('connect', function () {
-
         socket.on('playerInitPosition', function (hex) {
             //game.players.push(new Player(socket.id, hex));
         });
@@ -69,7 +85,6 @@ function gameInit() {
             console.log(data);
         });
 
-
         socket.on('disconnectUser', function (socketID) {
             H.removeObjByProp(game.players, 'id', socketID);
 
@@ -77,28 +92,20 @@ function gameInit() {
         });
 
     });
-
-    phaser = this;
-
-    let graphics = phaser.add.graphics();
-    let text = phaser.add.text(40, 60);
-    Graphics.getInstance().setPhaserGraphics(graphics);
-    Graphics.getInstance().setPhaserText(text);
-    Pointer.setPointer(phaser.input.mousePointer);
-
-    phaser.input.on('pointermove', pointermove);
-    phaser.input.on('pointerdown', pointerdown);
-
 }
 
 function gameLoop() {
+    //
     Graphics.getInstance().clear();
-    Graphics.getInstance().drawPointer();
+
     Graphics.getInstance().drawCollision();
     game.players.forEach((player)=>{
         Graphics.getInstance().drawPlayer(player);
     });
     Graphics.getInstance().drawPath();
+    //console.log(game.players);
+
+    Graphics.getInstance().drawPointer();
 }
 
 function pointerdown() {
@@ -108,7 +115,7 @@ function pointerdown() {
 }
 
 function pointermove() {
-    Graphics.getInstance().drawDebugInfo();
+    Graphics.getInstance().drawDebugInfo(game);
 }
 
 

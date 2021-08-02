@@ -25,6 +25,10 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/test', function (req, res) {
+    res.sendFile(__dirname + '/index_test.html');
+});
+
 server.listen(8802, function () {
     console.log('listening on http://127.0.0.1:8802/');
     server.updateRate = 1000 / 30;

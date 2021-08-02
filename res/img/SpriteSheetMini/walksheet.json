@@ -1,0 +1,2414 @@
+{
+	"textures": [
+		{
+			"image": "walksheet.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1617,
+				"h": 128
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "HMJMPSAT-0-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 72
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 72
+					}
+				},
+				{
+					"filename": "HMJMPSAT-4-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 39,
+						"h": 56
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 39,
+						"h": 56
+					},
+					"frame": {
+						"x": 0,
+						"y": 72,
+						"w": 39,
+						"h": 56
+					}
+				},
+				{
+					"filename": "HMJMPSAT-5-8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 72
+					},
+					"frame": {
+						"x": 29,
+						"y": 0,
+						"w": 29,
+						"h": 72
+					}
+				},
+				{
+					"filename": "HMJMPSAT-1-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 37,
+						"h": 56
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 37,
+						"h": 56
+					},
+					"frame": {
+						"x": 39,
+						"y": 72,
+						"w": 37,
+						"h": 56
+					}
+				},
+				{
+					"filename": "HMJMPSAT-0-8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 38,
+						"h": 71
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 38,
+						"h": 71
+					},
+					"frame": {
+						"x": 58,
+						"y": 0,
+						"w": 38,
+						"h": 71
+					}
+				},
+				{
+					"filename": "HMJMPSAT-1-9.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 37,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 37,
+						"h": 57
+					},
+					"frame": {
+						"x": 76,
+						"y": 71,
+						"w": 37,
+						"h": 57
+					}
+				},
+				{
+					"filename": "HMJMPSAT-5-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 39,
+						"h": 70
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 39,
+						"h": 70
+					},
+					"frame": {
+						"x": 96,
+						"y": 0,
+						"w": 39,
+						"h": 70
+					}
+				},
+				{
+					"filename": "HMJMPSAT-4-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 61,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 61,
+						"h": 58
+					},
+					"frame": {
+						"x": 113,
+						"y": 70,
+						"w": 61,
+						"h": 58
+					}
+				},
+				{
+					"filename": "HMJMPSAT-5-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 68
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 68
+					},
+					"frame": {
+						"x": 135,
+						"y": 0,
+						"w": 26,
+						"h": 68
+					}
+				},
+				{
+					"filename": "HMJMPSAT-0-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 67
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 67
+					},
+					"frame": {
+						"x": 161,
+						"y": 0,
+						"w": 27,
+						"h": 67
+					}
+				},
+				{
+					"filename": "HMJMPSAB-1-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 43,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 43,
+						"h": 61
+					},
+					"frame": {
+						"x": 174,
+						"y": 67,
+						"w": 43,
+						"h": 61
+					}
+				},
+				{
+					"filename": "HMJMPSAB-0-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 67
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 67
+					},
+					"frame": {
+						"x": 188,
+						"y": 0,
+						"w": 26,
+						"h": 67
+					}
+				},
+				{
+					"filename": "HMJMPSAT-0-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 67
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 67
+					},
+					"frame": {
+						"x": 214,
+						"y": 0,
+						"w": 26,
+						"h": 67
+					}
+				},
+				{
+					"filename": "HMJMPSAT-4-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 38,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 38,
+						"h": 61
+					},
+					"frame": {
+						"x": 217,
+						"y": 67,
+						"w": 38,
+						"h": 61
+					}
+				},
+				{
+					"filename": "HMJMPSAT-3-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 66
+					},
+					"frame": {
+						"x": 240,
+						"y": 0,
+						"w": 29,
+						"h": 66
+					}
+				},
+				{
+					"filename": "HMJMPSAT-1-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 36,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 36,
+						"h": 62
+					},
+					"frame": {
+						"x": 255,
+						"y": 66,
+						"w": 36,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAB-2-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 66
+					},
+					"frame": {
+						"x": 269,
+						"y": 0,
+						"w": 28,
+						"h": 66
+					}
+				},
+				{
+					"filename": "HMJMPSAT-5-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 62
+					},
+					"frame": {
+						"x": 291,
+						"y": 66,
+						"w": 27,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAB-0-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 66
+					},
+					"frame": {
+						"x": 297,
+						"y": 0,
+						"w": 27,
+						"h": 66
+					}
+				},
+				{
+					"filename": "HMJMPSAB-3-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 62
+					},
+					"frame": {
+						"x": 318,
+						"y": 66,
+						"w": 26,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAB-5-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 66
+					},
+					"frame": {
+						"x": 324,
+						"y": 0,
+						"w": 27,
+						"h": 66
+					}
+				},
+				{
+					"filename": "HMJMPSAT-2-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 62
+					},
+					"frame": {
+						"x": 344,
+						"y": 66,
+						"w": 26,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAB-5-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 66
+					},
+					"frame": {
+						"x": 351,
+						"y": 0,
+						"w": 27,
+						"h": 66
+					}
+				},
+				{
+					"filename": "HMJMPSAB-1-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 62
+					},
+					"frame": {
+						"x": 370,
+						"y": 66,
+						"w": 23,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAB-0-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 66
+					},
+					"frame": {
+						"x": 378,
+						"y": 0,
+						"w": 26,
+						"h": 66
+					}
+				},
+				{
+					"filename": "HMJMPSAB-2-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 62
+					},
+					"frame": {
+						"x": 393,
+						"y": 66,
+						"w": 23,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAT-5-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 66
+					},
+					"frame": {
+						"x": 404,
+						"y": 0,
+						"w": 25,
+						"h": 66
+					}
+				},
+				{
+					"filename": "HMJMPSAB-4-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 62
+					},
+					"frame": {
+						"x": 416,
+						"y": 66,
+						"w": 23,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAT-0-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 66
+					},
+					"frame": {
+						"x": 429,
+						"y": 0,
+						"w": 24,
+						"h": 66
+					}
+				},
+				{
+					"filename": "HMJMPSAT-0-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 62
+					},
+					"frame": {
+						"x": 439,
+						"y": 66,
+						"w": 23,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAT-5-9.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 66
+					},
+					"frame": {
+						"x": 453,
+						"y": 0,
+						"w": 24,
+						"h": 66
+					}
+				},
+				{
+					"filename": "HMJMPSAB-2-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 62
+					},
+					"frame": {
+						"x": 462,
+						"y": 66,
+						"w": 22,
+						"h": 62
+					}
+				},
+				{
+					"filename": "stay4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 14,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 14,
+						"h": 66
+					},
+					"frame": {
+						"x": 477,
+						"y": 0,
+						"w": 14,
+						"h": 66
+					}
+				},
+				{
+					"filename": "HMJMPSAT-5-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 62
+					},
+					"frame": {
+						"x": 484,
+						"y": 66,
+						"w": 22,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAT-2-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 38,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 38,
+						"h": 65
+					},
+					"frame": {
+						"x": 491,
+						"y": 0,
+						"w": 38,
+						"h": 65
+					}
+				},
+				{
+					"filename": "stay3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 63
+					},
+					"frame": {
+						"x": 506,
+						"y": 65,
+						"w": 28,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAB-2-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 30,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 30,
+						"h": 65
+					},
+					"frame": {
+						"x": 529,
+						"y": 0,
+						"w": 30,
+						"h": 65
+					}
+				},
+				{
+					"filename": "HMJMPSAB-4-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 63
+					},
+					"frame": {
+						"x": 534,
+						"y": 65,
+						"w": 27,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAB-5-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 30,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 30,
+						"h": 65
+					},
+					"frame": {
+						"x": 559,
+						"y": 0,
+						"w": 30,
+						"h": 65
+					}
+				},
+				{
+					"filename": "stay5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 63
+					},
+					"frame": {
+						"x": 561,
+						"y": 65,
+						"w": 27,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAB-1-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 63
+					},
+					"frame": {
+						"x": 588,
+						"y": 65,
+						"w": 26,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAT-2-8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 30,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 30,
+						"h": 65
+					},
+					"frame": {
+						"x": 589,
+						"y": 0,
+						"w": 30,
+						"h": 65
+					}
+				},
+				{
+					"filename": "HMJMPSAB-2-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 63
+					},
+					"frame": {
+						"x": 614,
+						"y": 65,
+						"w": 26,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAB-0-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 65
+					},
+					"frame": {
+						"x": 619,
+						"y": 0,
+						"w": 29,
+						"h": 65
+					}
+				},
+				{
+					"filename": "HMJMPSAB-3-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 63
+					},
+					"frame": {
+						"x": 640,
+						"y": 65,
+						"w": 26,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAT-5-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 65
+					},
+					"frame": {
+						"x": 648,
+						"y": 0,
+						"w": 27,
+						"h": 65
+					}
+				},
+				{
+					"filename": "HMJMPSAB-0-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 63
+					},
+					"frame": {
+						"x": 666,
+						"y": 65,
+						"w": 25,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAB-2-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 65
+					},
+					"frame": {
+						"x": 675,
+						"y": 0,
+						"w": 26,
+						"h": 65
+					}
+				},
+				{
+					"filename": "HMJMPSAB-1-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 63
+					},
+					"frame": {
+						"x": 691,
+						"y": 65,
+						"w": 24,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAB-5-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 65
+					},
+					"frame": {
+						"x": 701,
+						"y": 0,
+						"w": 26,
+						"h": 65
+					}
+				},
+				{
+					"filename": "HMJMPSAB-0-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 63
+					},
+					"frame": {
+						"x": 715,
+						"y": 65,
+						"w": 22,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAB-3-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 65
+					},
+					"frame": {
+						"x": 727,
+						"y": 0,
+						"w": 25,
+						"h": 65
+					}
+				},
+				{
+					"filename": "HMJMPSAB-3-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 63
+					},
+					"frame": {
+						"x": 737,
+						"y": 65,
+						"w": 22,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAT-0-9.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 65
+					},
+					"frame": {
+						"x": 752,
+						"y": 0,
+						"w": 25,
+						"h": 65
+					}
+				},
+				{
+					"filename": "HMJMPSAB-3-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 63
+					},
+					"frame": {
+						"x": 759,
+						"y": 65,
+						"w": 22,
+						"h": 63
+					}
+				},
+				{
+					"filename": "stay1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 13,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 13,
+						"h": 65
+					},
+					"frame": {
+						"x": 777,
+						"y": 0,
+						"w": 13,
+						"h": 65
+					}
+				},
+				{
+					"filename": "HMJMPSAB-5-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 20,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 20,
+						"h": 63
+					},
+					"frame": {
+						"x": 781,
+						"y": 65,
+						"w": 20,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAT-3-8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 39,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 39,
+						"h": 64
+					},
+					"frame": {
+						"x": 790,
+						"y": 0,
+						"w": 39,
+						"h": 64
+					}
+				},
+				{
+					"filename": "HMJMPSAT-0-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 30,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 30,
+						"h": 64
+					},
+					"frame": {
+						"x": 801,
+						"y": 64,
+						"w": 30,
+						"h": 64
+					}
+				},
+				{
+					"filename": "HMJMPSAB-3-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 64
+					},
+					"frame": {
+						"x": 829,
+						"y": 0,
+						"w": 29,
+						"h": 64
+					}
+				},
+				{
+					"filename": "HMJMPSAT-5-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 64
+					},
+					"frame": {
+						"x": 831,
+						"y": 64,
+						"w": 28,
+						"h": 64
+					}
+				},
+				{
+					"filename": "stay0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 28,
+						"h": 69
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 28,
+						"h": 64
+					},
+					"frame": {
+						"x": 858,
+						"y": 0,
+						"w": 28,
+						"h": 64
+					}
+				},
+				{
+					"filename": "stay2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 64
+					},
+					"frame": {
+						"x": 859,
+						"y": 64,
+						"w": 28,
+						"h": 64
+					}
+				},
+				{
+					"filename": "HMJMPSAB-3-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 64
+					},
+					"frame": {
+						"x": 886,
+						"y": 0,
+						"w": 27,
+						"h": 64
+					}
+				},
+				{
+					"filename": "HMJMPSAB-5-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 64
+					},
+					"frame": {
+						"x": 887,
+						"y": 64,
+						"w": 24,
+						"h": 64
+					}
+				},
+				{
+					"filename": "HMJMPSAB-0-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 64
+					},
+					"frame": {
+						"x": 911,
+						"y": 64,
+						"w": 23,
+						"h": 64
+					}
+				},
+				{
+					"filename": "HMJMPSAB-0-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 64
+					},
+					"frame": {
+						"x": 913,
+						"y": 0,
+						"w": 23,
+						"h": 64
+					}
+				},
+				{
+					"filename": "HMJMPSAB-5-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 64
+					},
+					"frame": {
+						"x": 934,
+						"y": 64,
+						"w": 22,
+						"h": 64
+					}
+				},
+				{
+					"filename": "HMJMPSAB-5-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 21,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 21,
+						"h": 64
+					},
+					"frame": {
+						"x": 936,
+						"y": 0,
+						"w": 21,
+						"h": 64
+					}
+				},
+				{
+					"filename": "HMJMPSAB-1-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 18,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 18,
+						"h": 63
+					},
+					"frame": {
+						"x": 956,
+						"y": 64,
+						"w": 18,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAB-4-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 17,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 17,
+						"h": 63
+					},
+					"frame": {
+						"x": 957,
+						"y": 0,
+						"w": 17,
+						"h": 63
+					}
+				},
+				{
+					"filename": "HMJMPSAB-2-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 20,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 20,
+						"h": 62
+					},
+					"frame": {
+						"x": 974,
+						"y": 0,
+						"w": 20,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAB-4-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 18,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 18,
+						"h": 62
+					},
+					"frame": {
+						"x": 974,
+						"y": 62,
+						"w": 18,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAB-1-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 17,
+						"h": 62
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 17,
+						"h": 62
+					},
+					"frame": {
+						"x": 992,
+						"y": 62,
+						"w": 17,
+						"h": 62
+					}
+				},
+				{
+					"filename": "HMJMPSAB-1-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 61
+					},
+					"frame": {
+						"x": 994,
+						"y": 0,
+						"w": 25,
+						"h": 61
+					}
+				},
+				{
+					"filename": "HMJMPSAB-4-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 61
+					},
+					"frame": {
+						"x": 1009,
+						"y": 61,
+						"w": 25,
+						"h": 61
+					}
+				},
+				{
+					"filename": "HMJMPSAT-2-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 61
+					},
+					"frame": {
+						"x": 1019,
+						"y": 0,
+						"w": 25,
+						"h": 61
+					}
+				},
+				{
+					"filename": "HMJMPSAT-3-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 61
+					},
+					"frame": {
+						"x": 1034,
+						"y": 61,
+						"w": 25,
+						"h": 61
+					}
+				},
+				{
+					"filename": "HMJMPSAT-0-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 61
+					},
+					"frame": {
+						"x": 1044,
+						"y": 0,
+						"w": 24,
+						"h": 61
+					}
+				},
+				{
+					"filename": "HMJMPSAB-4-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 61
+					},
+					"frame": {
+						"x": 1059,
+						"y": 61,
+						"w": 23,
+						"h": 61
+					}
+				},
+				{
+					"filename": "HMJMPSAB-2-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 20,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 20,
+						"h": 61
+					},
+					"frame": {
+						"x": 1068,
+						"y": 0,
+						"w": 20,
+						"h": 61
+					}
+				},
+				{
+					"filename": "HMJMPSAT-4-8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 62,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 62,
+						"h": 60
+					},
+					"frame": {
+						"x": 1082,
+						"y": 61,
+						"w": 62,
+						"h": 60
+					}
+				},
+				{
+					"filename": "HMJMPSAT-1-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 61,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 61,
+						"h": 60
+					},
+					"frame": {
+						"x": 1088,
+						"y": 0,
+						"w": 61,
+						"h": 60
+					}
+				},
+				{
+					"filename": "HMJMPSAB-1-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 43,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 43,
+						"h": 60
+					},
+					"frame": {
+						"x": 1144,
+						"y": 60,
+						"w": 43,
+						"h": 60
+					}
+				},
+				{
+					"filename": "HMJMPSAB-4-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 43,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 43,
+						"h": 60
+					},
+					"frame": {
+						"x": 1149,
+						"y": 0,
+						"w": 43,
+						"h": 60
+					}
+				},
+				{
+					"filename": "HMJMPSAB-4-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 60
+					},
+					"frame": {
+						"x": 1187,
+						"y": 60,
+						"w": 42,
+						"h": 60
+					}
+				},
+				{
+					"filename": "HMJMPSAT-4-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 37,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 37,
+						"h": 60
+					},
+					"frame": {
+						"x": 1192,
+						"y": 0,
+						"w": 37,
+						"h": 60
+					}
+				},
+				{
+					"filename": "HMJMPSAT-3-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 60
+					},
+					"frame": {
+						"x": 1229,
+						"y": 0,
+						"w": 28,
+						"h": 60
+					}
+				},
+				{
+					"filename": "HMJMPSAT-0-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 60
+					},
+					"frame": {
+						"x": 1229,
+						"y": 60,
+						"w": 27,
+						"h": 60
+					}
+				},
+				{
+					"filename": "HMJMPSAT-5-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 60
+					},
+					"frame": {
+						"x": 1256,
+						"y": 60,
+						"w": 26,
+						"h": 60
+					}
+				},
+				{
+					"filename": "HMJMPSAB-3-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 60
+					},
+					"frame": {
+						"x": 1257,
+						"y": 0,
+						"w": 22,
+						"h": 60
+					}
+				},
+				{
+					"filename": "HMJMPSAT-1-8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 61,
+						"h": 59
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 61,
+						"h": 59
+					},
+					"frame": {
+						"x": 1279,
+						"y": 0,
+						"w": 61,
+						"h": 59
+					}
+				},
+				{
+					"filename": "HMJMPSAT-1-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 39,
+						"h": 59
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 39,
+						"h": 59
+					},
+					"frame": {
+						"x": 1282,
+						"y": 59,
+						"w": 39,
+						"h": 59
+					}
+				},
+				{
+					"filename": "HMJMPSAT-1-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 59
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 59
+					},
+					"frame": {
+						"x": 1321,
+						"y": 59,
+						"w": 28,
+						"h": 59
+					}
+				},
+				{
+					"filename": "HMJMPSAT-1-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 59
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 59
+					},
+					"frame": {
+						"x": 1340,
+						"y": 0,
+						"w": 24,
+						"h": 59
+					}
+				},
+				{
+					"filename": "HMJMPSAT-4-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 58
+					},
+					"frame": {
+						"x": 1349,
+						"y": 59,
+						"w": 29,
+						"h": 58
+					}
+				},
+				{
+					"filename": "HMJMPSAT-4-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 58
+					},
+					"frame": {
+						"x": 1364,
+						"y": 0,
+						"w": 29,
+						"h": 58
+					}
+				},
+				{
+					"filename": "HMJMPSAT-1-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 58
+					},
+					"frame": {
+						"x": 1378,
+						"y": 58,
+						"w": 28,
+						"h": 58
+					}
+				},
+				{
+					"filename": "HMJMPSAT-2-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 58
+					},
+					"frame": {
+						"x": 1393,
+						"y": 0,
+						"w": 28,
+						"h": 58
+					}
+				},
+				{
+					"filename": "HMJMPSAT-2-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 58
+					},
+					"frame": {
+						"x": 1406,
+						"y": 58,
+						"w": 27,
+						"h": 58
+					}
+				},
+				{
+					"filename": "HMJMPSAT-4-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 58
+					},
+					"frame": {
+						"x": 1421,
+						"y": 0,
+						"w": 24,
+						"h": 58
+					}
+				},
+				{
+					"filename": "HMJMPSAT-4-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 58
+					},
+					"frame": {
+						"x": 1433,
+						"y": 58,
+						"w": 24,
+						"h": 58
+					}
+				},
+				{
+					"filename": "HMJMPSAT-2-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 58
+					},
+					"frame": {
+						"x": 1445,
+						"y": 0,
+						"w": 22,
+						"h": 58
+					}
+				},
+				{
+					"filename": "HMJMPSAT-4-9.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 37,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 37,
+						"h": 57
+					},
+					"frame": {
+						"x": 1457,
+						"y": 58,
+						"w": 37,
+						"h": 57
+					}
+				},
+				{
+					"filename": "HMJMPSAT-3-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 30,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 30,
+						"h": 57
+					},
+					"frame": {
+						"x": 1467,
+						"y": 0,
+						"w": 30,
+						"h": 57
+					}
+				},
+				{
+					"filename": "HMJMPSAT-3-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 57
+					},
+					"frame": {
+						"x": 1494,
+						"y": 57,
+						"w": 28,
+						"h": 57
+					}
+				},
+				{
+					"filename": "HMJMPSAT-3-9.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 57
+					},
+					"frame": {
+						"x": 1497,
+						"y": 0,
+						"w": 26,
+						"h": 57
+					}
+				},
+				{
+					"filename": "HMJMPSAT-3-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 57
+					},
+					"frame": {
+						"x": 1522,
+						"y": 57,
+						"w": 25,
+						"h": 57
+					}
+				},
+				{
+					"filename": "HMJMPSAT-1-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 57
+					},
+					"frame": {
+						"x": 1523,
+						"y": 0,
+						"w": 24,
+						"h": 57
+					}
+				},
+				{
+					"filename": "HMJMPSAT-2-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 56
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 56
+					},
+					"frame": {
+						"x": 1547,
+						"y": 0,
+						"w": 27,
+						"h": 56
+					}
+				},
+				{
+					"filename": "HMJMPSAT-3-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 57
+					},
+					"frame": {
+						"x": 1547,
+						"y": 56,
+						"w": 24,
+						"h": 57
+					}
+				},
+				{
+					"filename": "HMJMPSAT-2-9.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 57
+					},
+					"frame": {
+						"x": 1571,
+						"y": 56,
+						"w": 23,
+						"h": 57
+					}
+				},
+				{
+					"filename": "HMJMPSAT-2-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 56
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 56
+					},
+					"frame": {
+						"x": 1574,
+						"y": 0,
+						"w": 25,
+						"h": 56
+					}
+				},
+				{
+					"filename": "HMJMPSAT-3-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 57
+					},
+					"frame": {
+						"x": 1594,
+						"y": 56,
+						"w": 23,
+						"h": 57
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b2cc2fb308082772b561abb7b2cb8c67:974eec784546cd08081a9d9c27c8a719:aa822e4a46fe9e014479bce2ff1c2e28$"
+	}
+}
