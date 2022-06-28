@@ -7,4 +7,4 @@ services:
       - "80:8802"
     volumes:
       - .:/app
-      - /app/node_modules
+      - /app/node_modules:cached

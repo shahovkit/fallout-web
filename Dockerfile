@@ -14,6 +14,4 @@ RUN npm install
 
 COPY --chown=node:node . .
 
-EXPOSE 8802
-
 CMD [ "nodemon", "--experimental-modules", "app.mjs" ]
