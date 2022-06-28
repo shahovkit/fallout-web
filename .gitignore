@@ -3,3 +3,5 @@ package-lock.json
 env.js
 /.idea
 node_modules
+.history
+.lh
